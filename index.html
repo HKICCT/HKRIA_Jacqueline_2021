@@ -169,7 +169,7 @@
       restaurants.forEach((restaurant) => {
         let restaurantDiv = document.createElement('div');
         restaurantDiv.className = 'restaurant-item';
-        restaurantDiv.innerHTML = `<div class="restaurant-name">${restaurant['Restaurant Name']}</div><div class="restaurant-address">${restaurant['Cuisines']} <br> - Price Range: ${restaurant['Price Range']}</div>`;
+        restaurantDiv.innerHTML = `<div class="restaurant-name">${restaurant['Restaurant Name']}</div><div class="restaurant-address">- Cusisines: ${restaurant['Cuisines']} <br> - Price Range: ${restaurant['Price Range']}</div>`;
         sidebarContent.appendChild(restaurantDiv);
 
         let placeLocation = {
@@ -235,7 +235,12 @@
           map: map,
           title: restaurant['Restaurant Name'],
           icon: {
-            url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"
+            path: google.maps.SymbolPath.CIRCLE,
+            scale: 7,
+            fillColor: "#FFD700",
+            fillOpacity: 1,
+            strokeWeight: 1,
+            strokeColor: "#FFD700"
           }
         });
 
